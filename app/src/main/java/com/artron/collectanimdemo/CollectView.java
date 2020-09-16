@@ -12,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
@@ -95,6 +96,7 @@ public class CollectView extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 mTextBegin = (int) valueAnimator.getAnimatedValue();
+                requestLayout();
                 invalidate();
             }
         });
@@ -112,6 +114,7 @@ public class CollectView extends View {
                     public void run() {
                         stopAnim();
                         invalidate();
+                        requestLayout();
                     }
                 }, 1500);
 
@@ -154,6 +157,7 @@ public class CollectView extends View {
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 mTextBegin = (int) valueAnimator.getAnimatedValue();
                 invalidate();
+                requestLayout();
             }
         });
 
@@ -232,8 +236,9 @@ public class CollectView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),
-                getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));
+
+        int width = getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec) + mTextBegin;
+        setMeasuredDimension(width, getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));
     }
 
 
@@ -253,5 +258,11 @@ public class CollectView extends View {
                 break;
         }
         return result;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        return super.onTouchEvent(event);
     }
 }

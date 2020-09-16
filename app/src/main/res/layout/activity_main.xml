@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
     tools:context=".MainActivity">
 
    <com.artron.collectanimdemo.CollectView
        android:id="@+id/collect"
-       android:layout_width="wrap_content"
+       android:layout_width="90dp"
        android:layout_margin="20dp"
        app:select_drawable="@mipmap/ic_exhibit_new_praise"
        app:normal_drawable="@mipmap/ic_exhibit_detail_collect_normal"
