@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <com.artron.collectanimdemo.CollectView
+       android:id="@+id/collect"
+       android:layout_width="wrap_content"
+       android:layout_margin="20dp"
+       app:select_drawable="@mipmap/ic_exhibit_new_praise"
+       app:normal_drawable="@mipmap/ic_exhibit_detail_collect_normal"
+       app:padding="5dp"
+       app:shadow_radius="20dp"
+       android:layout_height="90dp"/>
+
+</RelativeLayout>

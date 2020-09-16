@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CollectView">
+        <attr name="select_drawable" format="reference" />
+        <attr name="normal_drawable" format="reference" />
+
+        <attr name="select_text" format="string" />
+        <attr name="normal_text" format="string" />
+        <attr name="padding" format="dimension" />
+        <attr name="text_size" format="dimension" />
+        <attr name="text_color" format="integer" />
+        <attr name="shadow_radius" format="dimension" />
+    </declare-styleable>
+</resources>
